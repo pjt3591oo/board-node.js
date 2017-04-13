@@ -1,0 +1,40 @@
+extends ../layout/layout
+
+block content
+
+    table.table.table-striped
+        tr
+            th title
+            th author
+            th count
+            th createdAt
+        - each post in posts
+            tr
+                td=post.title
+                td=post.content
+                td test3
+                td=post.createdAt
+
+
+    .add-another
+        a(href="/API_V1/posts/write")
+            button.btn.btn-default 글쓰기
+
+    div
+        ul.pagination
+            li
+                a(href='/API_V1/posts?limit=3&currentPage='+ prePage) Previous
+
+            -for (var i = currentPage-2; i <= currentPage +2 ; ++i){
+                if i > -1 &&  i <= maxPage-1
+                    if i != currentPage
+                        li
+                            a(href='/API_V1/posts?limit=3&currentPage=' + i)=i+1
+                    else
+                        li.active
+                            a(href='/API_V1/posts?limit=3&currentPage=' + i)=i + 1
+            -}
+
+            li
+                if nextPage <= maxPage-1
+                    a(href='/API_V1/posts?limit=3&currentPage='+ nextPage) Next
