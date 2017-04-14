@@ -9,7 +9,7 @@ block content
             th count
             th createdAt
         - each post in posts
-            tr
+            tr(data-b_id=post.id)
                 td=post.title
                 td=post.content
                 td test3

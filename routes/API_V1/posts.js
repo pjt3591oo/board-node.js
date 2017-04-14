@@ -37,6 +37,7 @@ router.get('/update', (req, res, next) => {
     res.render('./posts/update', { title: 'board update' });
 });
 
+// 글쓰기
 router.post('/write', (req, res, next)=>{
     let title = req.body.title,
         content = req.body.content;
