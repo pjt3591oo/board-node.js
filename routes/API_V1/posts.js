@@ -3,9 +3,19 @@ var router = express.Router();
 
 var {post} = require('../../models');
 
+router.get('/page/:id', (req, res, next) => {
+    let pageId = req.params.id;
+    console.log(pageId);
+    post
+        .findById(pageId)
+        .then( findedPost=>{
+            console.log(findedPost);
+            res.render('./posts/page', {postInfo: findedPost});
+        })
+});
+
 // 게시글 전체 보기 페이지
 router.get('/', (req, res, next) => {
-
 
     let limit = parseInt(req.query.limit) || 3,
         currentPage = parseInt(req.query.currentPage);

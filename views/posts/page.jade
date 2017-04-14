@@ -1,0 +1,9 @@
+extends ../layout/layout
+
+block content
+    form(method="post" action="/API_V1/posts/write")
+        .form-group
+            label(for='exampleInputEmail1') title
+            input#exampleInputEmail1.form-control(type='text', name="title", placeholder='Email', value=postInfo.title)
+            label(for='exampleInputEmail1') content
+            textarea.form-control(rows='5', name="content") #{postInfo.content}
