@@ -2,8 +2,8 @@ extends ../layout/layout
 
 block content
 
-    table.table.table-striped
-        tr
+    table.table.table-striped.board
+        tr.header
             th title
             th author
             th count
@@ -19,7 +19,7 @@ block content
         a(href="/API_V1/posts/write")
             button.btn.btn-default 글쓰기
 
-    div
+    div.pagination_dom
         ul.pagination
             li
                 a(href='/API_V1/posts?limit=3&currentPage='+ prePage) Previous

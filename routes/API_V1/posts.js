@@ -5,11 +5,10 @@ var {post} = require('../../models');
 
 router.get('/page/:id', (req, res, next) => {
     let pageId = req.params.id;
-    console.log(pageId);
+
     post
         .findById(pageId)
         .then( findedPost=>{
-            console.log(findedPost);
             res.render('./posts/page', {postInfo: findedPost});
         })
 });
@@ -59,5 +58,9 @@ router.post('/write', (req, res, next)=>{
         res.redirect('/API_V1/posts');
     })
 });
+
+router.put('/write/:id', (req, res, next)=>{
+    res.end(req.params.id);
+})
 
 module.exports = router;

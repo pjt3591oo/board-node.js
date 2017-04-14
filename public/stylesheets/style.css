@@ -1,8 +1,26 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
+}
+
+.pagination_dom{
+    text-align: center;
+}
+
+.add-another{
+    text-align: right;
+}
+
+table.board tr:not(.header){
+    cursor: pointer;
+}
+
+table.board tr:hover:not(.header){
+    background-color: #000;
+    opacity: 0.3;
+    color: white;
 }
